@@ -52,6 +52,6 @@ void pa(t_data *data)
     add_top(&data->pile_a, move);
     data->size_a++;
 
-    write(1, "pa\n", 1);
+    write(1, "pa\n", 3);
 }
 

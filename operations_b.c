@@ -15,7 +15,7 @@ void rb(t_data *data)
         return ;
     
     data->pile_b = data->pile_b->next;
-    write (1, "ra\n", 3);
+    write (1, "rb\n", 3);
 }
 
 void rrb(t_data *data)
@@ -26,7 +26,7 @@ void rrb(t_data *data)
         return ;
     last = find_last(data->pile_b);
     data->pile_b = last;
-    write (1, "rra\n", 4);
+    write (1, "rrb\n", 4);
 }
 
 void pb(t_data *data)

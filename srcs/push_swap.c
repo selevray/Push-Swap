@@ -79,7 +79,7 @@ int	main(int argc, char *argv[])
 	data.pile_b = NULL;
 	data.size_a = 0;
 	data.size_b = 0;
-	if (parse_arguments(argc, argv, &data))
+	if (parse_arguments(argc, argv, &data) == 0)
 	{
 		write(2, "Error\n", 6);
 		return (1);

@@ -6,6 +6,7 @@ void	ss(t_data *data)
 		return ;
 	swap(&data->pile_a);
 	swap(&data->pile_b);
+	data->ops_count++;
 	write(1, "ss\n", 3);
 }
 
@@ -15,6 +16,7 @@ void	rr(t_data *data)
 		return ;
 	data->pile_a = data->pile_a->next;
 	data->pile_b = data->pile_b->next;
+	data->ops_count++;
 	write(1, "rr\n", 3);
 }
 
@@ -32,5 +34,6 @@ void	rrr(t_data *data)
 	last_b = find_last(data->pile_b);
 	data->pile_b = last_b;
 
+	data->ops_count++;
 	write(1, "rrr\n", 4);
 }

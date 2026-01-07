@@ -6,6 +6,7 @@ void sb(t_data *data)
         return ;
     
     swap(&data->pile_b);
+	data->ops_count++;
     write(1, "sb\n", 3);
 }
 
@@ -15,6 +16,7 @@ void rb(t_data *data)
         return ;
     
     data->pile_b = data->pile_b->next;
+	data->ops_count++;
     write (1, "rb\n", 3);
 }
 
@@ -26,6 +28,7 @@ void rrb(t_data *data)
         return ;
     last = find_last(data->pile_b);
     data->pile_b = last;
+	data->ops_count++;
     write (1, "rrb\n", 4);
 }
 
@@ -52,6 +55,7 @@ void pb(t_data *data)
     move->next = move;
     add_top(&data->pile_b, move);
     data->size_b++;
+	data->ops_count++;
 
     write(1, "pb\n", 3);
 }

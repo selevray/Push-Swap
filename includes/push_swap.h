@@ -25,6 +25,7 @@ typedef struct s_data
 
 t_node				*new_node(int nb);
 void				add_top(t_node **top, t_node *new);
+void add_bottom(t_node **top, t_node *new);
 void				swap(t_node **pile);
 t_node				*find_last(t_node *top);
 void				print_stack(t_node *pile, char *name, int size);

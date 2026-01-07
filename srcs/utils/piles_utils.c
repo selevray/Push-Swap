@@ -18,7 +18,7 @@ t_node	*find_last(t_node *top)
 
 	if (top == NULL)
 		return (NULL);
-    current = top;
+	current = top;
 	while (current->next != top)
 		current = current->next;
 	return (current);
@@ -29,33 +29,46 @@ void	add_top(t_node **top, t_node *new)
 	t_node	*last;
 
 	if (*top == NULL)
-    {
-        *top = new;
-        new->next = new;
-        return ;
-    }
-    
+	{
+		*top = new;
+		new->next = new;
+		return ;
+	}
+	last = find_last(*top);
+	new->next = *top;
+	last->next = new;
+	*top = new;
+}
+
+void	swap(t_node **pile)
+{
+	t_node	*first;
+	t_node	*second;
+	t_node	*last;
+
+	if (*pile == NULL || (*pile)->next == *pile)
+		return ;
+	first = *pile;
+	second = first->next;
+	last = find_last(*pile);
+	first->next = second->next;
+	second->next = first;
+	last->next = second;
+	*pile = second;
+}
+
+void	add_bottom(t_node **top, t_node *new)
+{
+	t_node *last;
+
+	if (*top == NULL)
+	{
+		*top = new;
+		new->next = new;
+		return ;
+	}
+
     last = find_last(*top);
     new->next = *top;
     last->next = new;
-    *top = new;
-}
-
-void swap(t_node **pile)
-{
-    t_node *first;
-    t_node *second;
-    t_node *last;
-
-    if (*pile == NULL || (*pile)->next == *pile)
-        return ;
-    
-    first = *pile;
-    second = first->next;
-    last = find_last(*pile);
-
-    first->next = second->next;
-    second->next = first;
-    last->next = second;       
-    *pile = second;
 }

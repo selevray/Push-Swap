@@ -81,3 +81,21 @@ void print_stack(t_node *pile, char *name, int size)
     }
     ft_printf("\n");
 }
+void	free_stack(t_node *pile, int size)
+{
+	t_node	*current;
+	t_node	*next;
+	int		i;
+
+	if (!pile)
+		return ;
+	current = pile;
+	i = 0;
+	while (i < size)
+	{
+		next = current->next;
+		free(current);
+		current = next;
+		i++;
+	}
+}

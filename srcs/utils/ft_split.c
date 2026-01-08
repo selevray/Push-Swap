@@ -43,7 +43,7 @@ static char	*extract_word(char const *s, char c)
 	return (word);
 }
 
-static void	free_split(char **split, int i)
+void	free_split(char **split, int i)
 {
 	while (i > 0)
 		free(split[--i]);

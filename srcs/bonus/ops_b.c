@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations_b.c                                     :+:      :+:    :+:   */
+/*   ops_b.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bzeloxx <bzeloxx@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/14 11:44:30 by bzeloxx           #+#    #+#             */
-/*   Updated: 2026/01/14 14:36:34 by bzeloxx          ###   ########.fr       */
+/*   Created: 2026/01/14 16:16:23 by bzeloxx           #+#    #+#             */
+/*   Updated: 2026/01/14 16:37:46 by bzeloxx          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/bonus/checker.h"
 
-void	sb(t_data *data)
+void	ops_sb(t_data *data)
 {
 	if (data->size_b < 2)
 		return ;
 	swap(&data->pile_b);
-	write(1, "sb\n", 3);
 }
 
-void	rb(t_data *data)
+void	ops_rb(t_data *data)
 {
 	if (data->size_b < 2)
 		return ;
 	data->pile_b = data->pile_b->next;
-	write(1, "rb\n", 3);
 }
 
-void	rrb(t_data *data)
+void	ops_rrb(t_data *data)
 {
 	t_node	*last;
 
@@ -36,10 +34,9 @@ void	rrb(t_data *data)
 		return ;
 	last = find_last(data->pile_b);
 	data->pile_b = last;
-	write(1, "rrb\n", 4);
 }
 
-void	pb(t_data *data)
+void	ops_pb(t_data *data)
 {
 	t_node	*move;
 	t_node	*last_a;
@@ -59,5 +56,4 @@ void	pb(t_data *data)
 	move->next = move;
 	add_top(&data->pile_b, move);
 	data->size_b++;
-	write(1, "pb\n", 3);
 }

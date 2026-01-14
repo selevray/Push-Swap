@@ -6,7 +6,7 @@
 /*   By: bzeloxx <bzeloxx@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:40:02 by bzeloxx           #+#    #+#             */
-/*   Updated: 2026/01/14 11:41:12 by bzeloxx          ###   ########.fr       */
+/*   Updated: 2026/01/14 17:25:26 by bzeloxx          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	is_valid_number(char *str)
 	if (str[i] == '\0')
 		return (0);
 	if ((str[i] == '-' || str[i] == '+') && (str[i + 1] >= '0' && str[i
-				+ 1] <= '9'))
+			+ 1] <= '9'))
 		i++;
 	while (str[i] >= '0' && str[i] <= '9')
 		i++;
@@ -77,26 +77,25 @@ long	ft_atol(const char *str)
 	return (result * sign);
 }
 
-void	print_stack(t_node *pile, char *name, int size)
+int	is_sorted(t_data *data)
 {
 	t_node	*current;
 	int		i;
 
-	if (!pile)
-	{
-		ft_printf("%s: (vide)\n", name);
-		return ;
-	}
-	ft_printf("%s: ", name);
-	current = pile;
+	if (data->pile_a == NULL || data->size_a <= 1)
+		return (1);
+	if (data->pile_b != NULL || data->size_b > 0)
+		return (0);
+	current = data->pile_a;
 	i = 0;
-	while (i < size)
+	while (i < data->size_a - 1)
 	{
-		ft_printf("%d ", current->value);
+		if (current->value > current->next->value)
+			return (0);
 		current = current->next;
 		i++;
 	}
-	ft_printf("\n");
+	return (1);
 }
 
 void	free_stack(t_node *pile, int size)

@@ -6,7 +6,7 @@
 /*   By: bzeloxx <bzeloxx@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:43:04 by bzeloxx           #+#    #+#             */
-/*   Updated: 2026/01/14 12:04:59 by bzeloxx          ###   ########.fr       */
+/*   Updated: 2026/01/14 17:12:57 by bzeloxx          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define PUSH_SWAP_H
 
 # include "algorithms.h"
-# include "ft_printf.h"
 # include "operations.h"
+# include "bonus/checker.h"
 # include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>

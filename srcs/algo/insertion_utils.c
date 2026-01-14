@@ -6,17 +6,11 @@
 /*   By: bzeloxx <bzeloxx@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:45:38 by bzeloxx           #+#    #+#             */
-/*   Updated: 2026/01/14 11:59:15 by bzeloxx          ###   ########.fr       */
+/*   Updated: 2026/01/14 18:08:59 by bzeloxx          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int		get_index_at(t_node *pile, int pos);
-int		find_min_pos(t_data *data);
-int		find_target_pos(t_data *data, int b_index);
-int		calc_cost(t_data *data, int pos_b, int pos_a);
-void	find_best_move(t_data *data, int *pos_b, int *pos_a);
 
 int	get_index_at(t_node *pile, int pos)
 {

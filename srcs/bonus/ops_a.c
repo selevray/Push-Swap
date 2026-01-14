@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations_a.c                                     :+:      :+:    :+:   */
+/*   ops_a.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bzeloxx <bzeloxx@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/14 11:44:22 by bzeloxx           #+#    #+#             */
-/*   Updated: 2026/01/14 14:36:13 by bzeloxx          ###   ########.fr       */
+/*   Created: 2026/01/14 16:15:45 by bzeloxx           #+#    #+#             */
+/*   Updated: 2026/01/14 16:37:43 by bzeloxx          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/bonus/checker.h"
 
-void	sa(t_data *data)
+void	ops_sa(t_data *data)
 {
 	if (data->size_a < 2)
 		return ;
 	swap(&data->pile_a);
-	write(1, "sa\n", 3);
 }
 
-void	ra(t_data *data)
+void	ops_ra(t_data *data)
 {
 	if (data->size_a < 2)
 		return ;
 	data->pile_a = data->pile_a->next;
-	write(1, "ra\n", 3);
 }
 
-void	rra(t_data *data)
+void	ops_rra(t_data *data)
 {
 	t_node	*last;
 
@@ -36,10 +34,9 @@ void	rra(t_data *data)
 		return ;
 	last = find_last(data->pile_a);
 	data->pile_a = last;
-	write(1, "rra\n", 4);
 }
 
-void	pa(t_data *data)
+void	ops_pa(t_data *data)
 {
 	t_node	*move;
 	t_node	*last_b;
@@ -59,5 +56,4 @@ void	pa(t_data *data)
 	move->next = move;
 	add_top(&data->pile_a, move);
 	data->size_a++;
-	write(1, "pa\n", 3);
 }

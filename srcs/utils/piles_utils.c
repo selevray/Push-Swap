@@ -6,7 +6,7 @@
 /*   By: bzeloxx <bzeloxx@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:41:31 by bzeloxx           #+#    #+#             */
-/*   Updated: 2026/01/14 11:42:07 by bzeloxx          ###   ########.fr       */
+/*   Updated: 2026/01/14 18:08:58 by bzeloxx          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,22 +53,7 @@ void	add_top(t_node **top, t_node *new)
 	*top = new;
 }
 
-void	swap(t_node **pile)
-{
-	t_node	*first;
-	t_node	*second;
-	t_node	*last;
 
-	if (*pile == NULL || (*pile)->next == *pile)
-		return ;
-	first = *pile;
-	second = first->next;
-	last = find_last(*pile);
-	first->next = second->next;
-	second->next = first;
-	last->next = second;
-	*pile = second;
-}
 
 void	add_bottom(t_node **top, t_node *new)
 {

@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: selevray <selevray@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bzeloxx <bzeloxx@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 10:33:06 by selevray          #+#    #+#             */
-/*   Updated: 2025/12/01 16:43:37 by selevray         ###   ########.fr       */
+/*   Created: 2026/01/14 11:44:49 by bzeloxx           #+#    #+#             */
+/*   Updated: 2026/01/14 11:45:00 by bzeloxx          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 int	ft_print_char(char c)
 {
 	return (write(1, &c, 1));

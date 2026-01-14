@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bzeloxx <bzeloxx@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/14 11:35:52 by bzeloxx           #+#    #+#             */
+/*   Updated: 2026/01/14 11:39:19 by bzeloxx          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static int	validate_and_add(char *str, t_data *data)
@@ -57,19 +69,20 @@ static int	parse_single_string(char *str, t_data *data)
 	return (1);
 }
 
-static int parse_multiple_args(int argc, char **argv, t_data *data)
+static int	parse_multiple_args(int argc, char **argv, t_data *data)
 {
-    int i;
-    
-    i = 1;
-    while (i < argc)
-    {
-        if (!validate_and_add(argv[i], data))
-            return (0);
-        i++;
-    }
-    return (1);
-}   
+	int	i;
+
+	i = 1;
+	while (i < argc)
+	{
+		if (!validate_and_add(argv[i], data))
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 int	parse_arguments(int argc, char **argv, t_data *data)
 {
 	if (argc < 2)
@@ -79,4 +92,3 @@ int	parse_arguments(int argc, char **argv, t_data *data)
 	else
 		return (parse_multiple_args(argc, argv, data));
 }
-

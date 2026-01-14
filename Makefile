@@ -24,9 +24,11 @@ INCDIR		= includes
 # Source files
 SRCS		= main.c \
 			  $(SRCDIR)/push_swap.c \
-			  $(SRCDIR)/algo/bubblesort.c \
-			  $(SRCDIR)/algo/exception.c \
-			  $(SRCDIR)/algo/inserption.c \
+			  $(SRCDIR)/algo/sort_small.c \
+			  $(SRCDIR)/algo/insertion_utils.c \
+			  $(SRCDIR)/algo/insertion_exec.c \
+			  $(SRCDIR)/algo/insertion.c \
+			  $(SRCDIR)/algo/radix_utils.c \
 			  $(SRCDIR)/algo/radix.c \
 			  $(SRCDIR)/utils/piles_utils.c \
 			  $(SRCDIR)/utils/utils.c \

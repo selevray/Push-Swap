@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bzeloxx <bzeloxx@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/14 11:42:59 by bzeloxx           #+#    #+#             */
+/*   Updated: 2026/01/14 11:43:36 by bzeloxx          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
@@ -5,7 +17,8 @@
 # include <stddef.h>
 # include <unistd.h>
 
-int		ft_printf(const char *format, ...) __attribute__((format(printf, 1, 2)));
+int		ft_printf(const char *format, ...) __attribute__((format(printf, 1,
+					2)));
 int		ft_format(char c, va_list args);
 
 size_t	ft_strlen(const char *str);

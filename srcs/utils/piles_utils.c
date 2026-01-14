@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   piles_utils.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bzeloxx <bzeloxx@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/14 11:41:31 by bzeloxx           #+#    #+#             */
+/*   Updated: 2026/01/14 11:42:07 by bzeloxx          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 t_node	*new_node(int value)
@@ -8,6 +20,7 @@ t_node	*new_node(int value)
 	if (!new)
 		return (NULL);
 	new->value = value;
+	new->index = -1;
 	new->next = NULL;
 	return (new);
 }
@@ -59,7 +72,8 @@ void	swap(t_node **pile)
 
 void	add_bottom(t_node **top, t_node *new)
 {
-	t_node *last;
+	t_node	*last;
+	t_node	*first;
 
 	if (*top == NULL)
 	{
@@ -67,8 +81,8 @@ void	add_bottom(t_node **top, t_node *new)
 		new->next = new;
 		return ;
 	}
-
-    last = find_last(*top);
-    new->next = *top;
-    last->next = new;
+	first = *top;
+	last = find_last(*top);
+	new->next = first;
+	last->next = new;
 }

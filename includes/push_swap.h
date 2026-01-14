@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bzeloxx <bzeloxx@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/14 11:43:04 by bzeloxx           #+#    #+#             */
+/*   Updated: 2026/01/14 12:04:59 by bzeloxx          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -11,6 +23,7 @@
 typedef struct s_node
 {
 	int				value;
+	int				index;
 	struct s_node	*next;
 }					t_node;
 
@@ -29,16 +42,16 @@ void				add_bottom(t_node **top, t_node *new);
 void				swap(t_node **pile);
 t_node				*find_last(t_node *top);
 void				print_stack(t_node *pile, char *name, int size);
+int					parse_arguments(int argc, char **argv, t_data *data);
 void				free_stack(t_node *pile, int size);
 
 int					has_duplicate(t_node *pile, int value, int size);
 int					is_valid_number(char *str);
 long				ft_atol(const char *str);
 int					find_min(t_node *pile, int size);
+int					is_sorted(t_data *data);
 void				bring_to_top(t_data *piles, int value);
 
 char				**ft_split(char const *str, char charset);
-int					parse_arguments(int argc, char **argv, t_data *data);
-void				index_stack(t_node *pile, int size);
 
 #endif

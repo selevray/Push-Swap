@@ -6,16 +6,16 @@
 /*   By: bzeloxx <bzeloxx@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:35:08 by bzeloxx           #+#    #+#             */
-/*   Updated: 2026/01/14 18:08:57 by bzeloxx          ###   ########.fr       */
+/*   Updated: 2026/01/14 23:27:39 by bzeloxx          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-
 static void	execute_sort(t_data *data)
 {
+	int median;
+
 	if (data->size_a == 0)
 		return ;
 	if (is_sorted(data))
@@ -26,15 +26,10 @@ static void	execute_sort(t_data *data)
 		sort_three(data);
 	else if (data->size_a <= 5)
 		sort_five(data);
-	else if (data->size_a <= 100)
-	{
-		index_stack(data->pile_a, data->size_a);
-		insertion_sort(data);
-	}
 	else
 	{
-		index_stack(data->pile_a, data->size_a);
-		radix_sort(data);
+		index_stack(data->pile_a, data->size_a, &median);
+		insertion_sort(data, median);
 	}
 }
 

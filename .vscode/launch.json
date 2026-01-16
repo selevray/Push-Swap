@@ -8,8 +8,8 @@
             "type": "lldb",
             "request": "launch",
             "name": "Launch",
-            "program": "a.out",
-            "args": [],
+            "program": "checker",
+            "args": ["4", "67", "3", "87", "23"],
             "cwd": "${workspaceFolder}"
         },
 

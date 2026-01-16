@@ -13,7 +13,7 @@
 NAME		= push_swap
 
 CC			= cc
-CFLAGS		= -Wall -Wextra -Werror -g
+CFLAGS		= -Wall -Wextra -Werror -g3
 INCLUDES	= -I./includes
 
 # Directories
@@ -24,12 +24,11 @@ INCDIR		= includes
 # Source files
 SRCS		= main.c \
 			  $(SRCDIR)/push_swap.c \
-			  $(SRCDIR)/algo/sort_small.c \
-			  $(SRCDIR)/algo/insertion_utils.c \
-			  $(SRCDIR)/algo/insertion_exec.c \
-			  $(SRCDIR)/algo/insertion.c \
-			  $(SRCDIR)/algo/radix_utils.c \
-			  $(SRCDIR)/algo/radix.c \
+			  $(SRCDIR)/sorting/sort_small.c \
+			  $(SRCDIR)/sorting/insertion_utils.c \
+			  $(SRCDIR)/sorting/insertion_exec.c \
+			  $(SRCDIR)/sorting/insertion.c \
+			  $(SRCDIR)/sorting/sort_and_index.c \
 			  $(SRCDIR)/utils/piles_utils.c \
 			  $(SRCDIR)/utils/utils.c \
 			  $(SRCDIR)/utils/exeption_utils.c \

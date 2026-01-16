@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   radix_utils.c                                      :+:      :+:    :+:   */
+/*   sort_and_index.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bzeloxx <bzeloxx@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/14 12:03:55 by bzeloxx           #+#    #+#             */
-/*   Updated: 2026/01/14 12:04:15 by bzeloxx          ###   ########.fr       */
+/*   Created: 2026/01/14 23:29:21 by bzeloxx           #+#    #+#             */
+/*   Updated: 2026/01/14 23:29:23 by bzeloxx          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	find_index(int *tab, int size, int value)
 	return (-1);
 }
 
-void	index_stack(t_node *pile, int size)
+void	index_stack(t_node *pile, int size, int *median)
 {
 	t_node	*current;
 	int		i;
@@ -93,5 +93,21 @@ void	index_stack(t_node *pile, int size)
 		current = current->next;
 		i++;
 	}
+	*median = tab[size / 2];
 	free(tab);
+}
+void	print_stack(t_data *data)
+{
+	int		i;
+	t_node	*current;
+
+#include <stdio.h>
+	i = 0;
+	current = data->pile_a;
+	while (i < data->size_a)
+	{
+		printf("%d ", current->value);
+		i++;
+		current = current->next;
+	}
 }

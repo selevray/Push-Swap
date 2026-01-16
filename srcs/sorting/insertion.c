@@ -6,7 +6,7 @@
 /*   By: bzeloxx <bzeloxx@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:45:33 by bzeloxx           #+#    #+#             */
-/*   Updated: 2026/01/14 12:08:00 by bzeloxx          ###   ########.fr       */
+/*   Updated: 2026/01/14 20:48:04 by bzeloxx          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,17 @@ void	final_rotate(t_data *data)
 	rotate_a(data, min_pos);
 }
 
-void	insertion_sort(t_data *data)
+void	insertion_sort(t_data *data, int median)
 {
 	int	pos_b;
 	int	pos_a;
 
 	while (data->size_a > 3)
+	{
 		pb(data);
+		if (data->pile_b->value < median)
+			rb(data);
+	}	
 	if (data->size_a == 3)
 		sort_three(data);
 	else if (data->size_a == 2)

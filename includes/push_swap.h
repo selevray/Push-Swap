@@ -6,7 +6,7 @@
 /*   By: bzeloxx <bzeloxx@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:43:04 by bzeloxx           #+#    #+#             */
-/*   Updated: 2026/01/14 20:54:11 by bzeloxx          ###   ########.fr       */
+/*   Updated: 2026/01/16 13:58:00 by bzeloxx          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,12 @@ typedef struct s_data
 	t_node			*pile_b;
 	int				size_a;
 	int				size_b;
-	int				ops_count;
+//int				ops_count,
 }					t_data;
 
 t_node				*new_node(int nb);
 void				add_top(t_node **top, t_node *new);
 void				add_bottom(t_node **top, t_node *new);
-void				swap(t_node **pile);
 t_node				*find_last(t_node *top);
 int					parse_arguments(int argc, char **argv, t_data *data);
 void				free_stack(t_node *pile, int size);

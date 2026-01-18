@@ -6,7 +6,7 @@
 /*   By: bzeloxx <bzeloxx@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:44:10 by bzeloxx           #+#    #+#             */
-/*   Updated: 2026/01/14 14:36:46 by bzeloxx          ###   ########.fr       */
+/*   Updated: 2026/01/16 13:52:10 by bzeloxx          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ void	rr(t_data *data)
 {
 	if (data->size_a < 2 || data->size_b < 2)
 		return ;
-	data->pile_a = data->pile_a->next;
-	data->pile_b = data->pile_b->next;
+	reverse(&data->pile_a);
+	reverse(&data->pile_b);
 	write(1, "rr\n", 3);
 }
 

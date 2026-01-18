@@ -41,9 +41,6 @@ SRCS		= main.c \
 # Bonus source files
 BONUS_SRCS = $(SRCDIR)/bonus/checker.c \
              $(SRCDIR)/bonus/read_ops.c \
-			 $(SRCDIR)/bonus/ops_a.c \
-			 $(SRCDIR)/bonus/ops_b.c \
-			 $(SRCDIR)/bonus/ops_mix.c \
 			 $(SRCDIR)/bonus/get-next-line/get_next_line.c \
 			 $(SRCDIR)/bonus/get-next-line/get_next_line_utils.c \
              $(COMMON_SRCS)

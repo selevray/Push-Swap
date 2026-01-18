@@ -6,7 +6,7 @@
 /*   By: bzeloxx <bzeloxx@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 16:37:56 by bzeloxx           #+#    #+#             */
-/*   Updated: 2026/01/14 17:23:56 by bzeloxx          ###   ########.fr       */
+/*   Updated: 2026/01/16 15:43:52 by bzeloxx          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,26 +25,26 @@ int	ft_strcmp(char *s1, char *s2)
 int	execute_instruction(t_data *data, char *line)
 {
 	if (ft_strcmp(line, "sa\n") == 0)
-		ops_sa(data);
+		swap(&data->pile_a);
 	else if (ft_strcmp(line, "sb\n") == 0)
-		ops_sb(data);
+		swap(&data->pile_b);
 	else if (ft_strcmp(line, "ss\n") == 0)
 	{
-		ops_sa(data);
-		ops_sb(data);
+		swap(&data->pile_a);
+		swap(&data->pile_b);
 	}
 	else if (ft_strcmp(line, "pa\n") == 0)
-		ops_pa(data);
+		push(&data->pile_b, &data->pile_a, &data->size_b, &data->size_a);
 	else if (ft_strcmp(line, "pb\n") == 0)
-		ops_pb(data);
+		push(&data->pile_a, &data->pile_b, &data->size_a, &data->size_b);
 	else if (ft_strcmp(line, "ra\n") == 0)
-		ops_ra(data);
+		reverse(&data->pile_a);
 	else if (ft_strcmp(line, "rb\n") == 0)
-		ops_rb(data);
+		reverse(&data->pile_b);
 	else if (ft_strcmp(line, "rr\n") == 0)
 	{
-		ops_ra(data);
-		ops_rb(data);
+		reverse(&data->pile_a);
+		reverse(&data->pile_b);
 	}
 	else
 		return (execute_instruction_2(data, line));
@@ -54,13 +54,13 @@ int	execute_instruction(t_data *data, char *line)
 int	execute_instruction_2(t_data *data, char *line)
 {
 	if (ft_strcmp(line, "rra\n") == 0)
-		ops_rra(data);
+		reverse_rotate(&data->pile_a, data->size_a);
 	else if (ft_strcmp(line, "rrb\n") == 0)
-		ops_rrb(data);
+		reverse_rotate(&data->pile_b, data->size_b);
 	else if (ft_strcmp(line, "rrr\n") == 0)
 	{
-		ops_rra(data);
-		ops_rrb(data);
+		reverse_rotate(&data->pile_a, data->size_a);
+		reverse_rotate(&data->pile_b, data->size_b);
 	}
 	else
 		return (0);

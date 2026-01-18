@@ -6,7 +6,7 @@
 /*   By: bzeloxx <bzeloxx@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:35:08 by bzeloxx           #+#    #+#             */
-/*   Updated: 2026/01/14 23:27:39 by bzeloxx          ###   ########.fr       */
+/*   Updated: 2026/01/16 18:53:15 by bzeloxx          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ int	main(int argc, char *argv[])
 	data.pile_b = NULL;
 	data.size_a = 0;
 	data.size_b = 0;
-	data.ops_count = 0;
 	if (parse_arguments(argc, argv, &data) == 0)
 	{
 		write(2, "Error\n", 6);

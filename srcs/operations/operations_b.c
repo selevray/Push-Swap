@@ -6,7 +6,7 @@
 /*   By: bzeloxx <bzeloxx@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:44:30 by bzeloxx           #+#    #+#             */
-/*   Updated: 2026/01/14 14:36:34 by bzeloxx          ###   ########.fr       */
+/*   Updated: 2026/01/16 14:27:39 by bzeloxx          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,40 +24,20 @@ void	rb(t_data *data)
 {
 	if (data->size_b < 2)
 		return ;
-	data->pile_b = data->pile_b->next;
+	reverse(&data->pile_b);
 	write(1, "rb\n", 3);
 }
 
 void	rrb(t_data *data)
 {
-	t_node	*last;
-
 	if (data->size_b < 2)
 		return ;
-	last = find_last(data->pile_b);
-	data->pile_b = last;
+	reverse_rotate(&data->pile_b, data->size_b);
 	write(1, "rrb\n", 4);
 }
 
 void	pb(t_data *data)
 {
-	t_node	*move;
-	t_node	*last_a;
-
-	if (data->pile_a == NULL)
-		return ;
-	move = data->pile_a;
-	if (data->size_a == 1)
-		data->pile_a = NULL;
-	else
-	{
-		last_a = find_last(data->pile_a);
-		data->pile_a = data->pile_a->next;
-		last_a->next = data->pile_a;
-	}
-	data->size_a--;
-	move->next = move;
-	add_top(&data->pile_b, move);
-	data->size_b++;
+	push(&data->pile_a, &data->pile_b, &data->size_a, &data->size_b);
 	write(1, "pb\n", 3);
 }

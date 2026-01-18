@@ -6,7 +6,7 @@
 /*   By: bzeloxx <bzeloxx@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:41:31 by bzeloxx           #+#    #+#             */
-/*   Updated: 2026/01/14 18:08:58 by bzeloxx          ###   ########.fr       */
+/*   Updated: 2026/01/16 13:11:00 by bzeloxx          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,6 @@ void	add_top(t_node **top, t_node *new)
 	last->next = new;
 	*top = new;
 }
-
-
 
 void	add_bottom(t_node **top, t_node *new)
 {

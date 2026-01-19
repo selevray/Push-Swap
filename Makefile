@@ -3,12 +3,13 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bzeloxx <bzeloxx@student.42.fr>          +#+  +:+       +#+         #
+#    By: zeloxx <zeloxx@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/01/08                          #+#    #+#                  #
-#    Updated: 2026/01/08                         ###   ########.fr            #
+#    Created: 2026/01/19 15:31:37 by zeloxx            #+#    #+#              #
+#    Updated: 2026/01/19 15:31:39 by zeloxx           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 NAME		= push_swap
 
@@ -65,7 +66,7 @@ OBJS = $(OBJDIR)/main.o \
 
 
 # Bonus object files
-BONUS_OBJS = $(OBJDIR)/bonus/main.o \
+BONUS_OBJS = $(OBJDIR)/bonus/main_bonus.o \
 			 $(OBJDIR)/bonus/read_ops_bonus.o \
 			 $(OBJDIR)/bonus/get_next_line_bonus.o \
 			 $(OBJDIR)/bonus/get_next_line_utils_bonus.o

@@ -9,7 +9,7 @@ Ma solution repose sur une **liste chaînée circulaire**, une structure de donn
 
 
 
-L'algorithme de tri utilisé est un **Insertion Sort optimisé** par un calcul de coût : pour chaque nombre, le programme calcule le nombre de rotations nécessaires dans les deux piles pour l'insérer à sa place idéale, choisissant toujours l'opération la moins coûteuse (souvent appelé "Turk Algorithm").
+L'algorithme de tri utilisé est un **Insertion Sort optimisé** par un calcul de coût : pour chaque nombre, le programme calcule le nombre de rotations nécessaires dans les deux piles pour l'insérer à sa place idéale, choisissant toujours l'opération la moins coûteuse.
 
 ---
 

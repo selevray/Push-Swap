@@ -6,7 +6,7 @@
 /*   By: selevray <selevray@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:40:02 by bzeloxx           #+#    #+#             */
-/*   Updated: 2026/01/19 15:34:09 by selevray         ###   ########.fr       */
+/*   Updated: 2026/01/19 20:24:48 by selevray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ int	is_valid_number(char *str)
 		i++;
 	if (str[i] == '\0')
 		return (0);
-	if ((str[i] == '-' || str[i] == '+') && (str[i + 1] >= '0' && str[i
-			+ 1] <= '9'))
+	if ((str[i] == '-' || str[i] == '+') && (str[i + 1] >= '0'
+			&& str[i + 1] <= '9'))
 		i++;
 	while (str[i] >= '0' && str[i] <= '9')
 		i++;
@@ -61,8 +61,6 @@ long	ft_atol(const char *str)
 	i = 0;
 	sign = 1;
 	result = 0;
-	// if (str[i] = "2147483648")
-	// 	return 1;
 	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
 	if (str[i] == '-' || str[i] == '+')

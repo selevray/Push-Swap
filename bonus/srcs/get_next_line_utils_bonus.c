@@ -6,7 +6,7 @@
 /*   By: selevray <selevray@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 15:21:29 by selevray          #+#    #+#             */
-/*   Updated: 2026/01/19 15:34:30 by selevray         ###   ########.fr       */
+/*   Updated: 2026/01/19 17:37:27 by selevray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ char	*ft_strdup(const char *s)
 	}
 	dup[i] = '\0';
 	return (dup);
-	
 }
 
 char	*ft_strjoin(char const *s1, char const *s2)

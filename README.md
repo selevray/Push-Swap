@@ -3,66 +3,69 @@
 # Push_swap
 
 ## Description
-Le projet **Push_swap** est un exercice d'algorithmie consistant à trier une pile de nombres avec un set d'instructions limité. L'enjeu est de trouver la séquence d'instructions la plus courte.
+The **Push_swap** project is an algorithmic exercise that involves sorting a stack of numbers using a limited set of instructions. The goal is to find the shortest sequence of instructions possible.
 
-Ma solution repose sur une **liste chaînée circulaire**, une structure de données où chaque nœud pointe vers le suivant et le précédent, et où le dernier élément est relié au premier. Cette architecture est idéale pour simuler le comportement circulaire des piles (les rotations `ra`, `rb`, `rra`, `rrb`).
+My solution is based on a **doubly circular linked list**. This data structure, where each node points to both the next and previous elements and the last node links back to the first, is ideal for simulating the circular behavior of stacks required by the subject (facilitating rotations like `ra`, `rb`, `rra`, and `rrb`).
 
 
 
-L'algorithme de tri utilisé est un **Insertion Sort optimisé** par un calcul de coût : pour chaque nombre, le programme calcule le nombre de rotations nécessaires dans les deux piles pour l'insérer à sa place idéale, choisissant toujours l'opération la moins coûteuse.
+The sorting algorithm used is an **optimized Insertion Sort** driven by a **cost analysis**: for each number, the program calculates the number of rotations required in both stacks to insert it into its ideal position, always choosing the cheapest operation (an approach similar to the "Turk Algorithm").
 
 ---
 
-### 📊 Performances
+### 📊 Performance
 
-Mon algorithme dépasse largement les exigences du barème de 42 :
+My algorithm significantly exceeds the requirements of the 42 project rubric:
 
-| Nombre d'éléments | Performance (Moyenne) | Objectif 42 (Max) |
+| Number of elements | Performance (Average) | 42 Objective (Max) |
 | :--- | :---: | :---: |
-| **3 nombres** | `2 coups` | 3 coups |
-| **5 nombres** | `8 coups` | 12 coups |
-| **100 nombres** | `577 coups` | 700 coups |
-| **500 nombres** | `4588 coups` | 5500 coups |
+| **3 numbers** | `2 moves` | 3 moves |
+| **5 numbers** | `8 moves` | 12 moves |
+| **100 numbers** | `577 moves` | 700 moves |
+| **500 numbers** | `4588 moves` | 5500 moves |
 
-> _Les tests ont été effectués avec des listes générées aléatoirement sur 100 itérations._
+> _Tests were conducted with randomly generated lists over 100 iterations._
 
 ---
 
-## Instructions
+## 🛠️ Instructions
 
 ### Compilation
-Le projet se compile via le `Makefile` :
+The project is compiled using the provided `Makefile`:
 ```bash
-make          # Compile push_swap
-make bonus    # Compile le checker
-make clean    # Supprime les objets
-make fclean   # Supprime toutW
+make          # Compiles push_swap
+make bonus    # Compiles the checker
+make clean    # Removes object files
+make fclean   # Removes all compiled files
 ```
 
-### Exec
+### Execution
 ```bash 
-ARG="4 67 3 1 23"; ./push_swap $ARG #Exec Push Swap
-ARG="4 1 2"; ./push_swap $ARG | ./checker $ARG #Exec Push Swap + checker
-# Résultat attendu : OK
+# Run Push_swap
+ARG="4 67 3 1 23"; ./push_swap $ARG
+
+# Run Push_swap with the checker (Bonus)
+ARG="4 1 2"; ./push_swap $ARG | ./checker $ARG
+# Expected result: OK
 ```
 
 ## Resources
 
 ### 🧠 Algorithmes
-* **[Insertion Sort (Explications)](https://www.geeksforgeeks.org/dsa/insertion-sort-algorithm/)** : Pour comprendre le tri par base si tu as choisi une approche binaire.
+* **[Insertion Sort (Explications)](https://www.geeksforgeeks.org/dsa/insertion-sort-algorithm/)** : Understanding the logic of element-by-element insertion sorting..
 
 ### 🛠️ Outils & Testeurs
-* **[Push_swap Visualizer](https://github.com/o-reo/push_swap_visualizer)** : Indispensable pour voir ton algorithme "réfléchir" en temps réel.
-* **[Push_swap Tester](https://github.com/SimonCROS/push_swap_tester)** : Pour tester les performances.
+* **[Push_swap Visualizer](https://github.com/o-reo/push_swap_visualizer)** : Essential tool to visualize the algorithm in real-time..
+* **[Push_swap Tester](https://github.com/SimonCROS/push_swap_tester)** : A suite of tests to validate performance and logic.
 
 ### 🤖 AI as fait 
-* **Aide au Debugging :** Analyse de segments de code spécifiques pour identifier des fuites de mémoire (leaks) ou des erreurs de segmentation.
-* **Exercice de Comprehension:** : Étude de plusieurs algorithmes de tri pour comparer leur efficacité avant implémentation..
-* **Explication de Concepts :** Clarification des calculs de coûts pour les optimisations de mouvements..
-* **Optimisation du README :** Aide à la mise en page et à la structuration de cette documentation.
+* **Debugging Assistance :** Analysis of specific code segments to identify memory leaks or segmentation faults.
+* **Conceptual Learning :** Comparative study of various sorting algorithms (Bubble, Quick, Radix) to select the most efficient one for this project.
+* **Concept Clarification :** Deep dives into cost calculation logic for movement optimization.
+* **README Optimization :** Assistance with formatting and structuring this documentation.
 
 ### 🚫 Ce que l'IA n'a PAS fait :
-* **Logique de l'Algorithme :** La stratégie de tri et le choix des mouvements ont été pensés et implémentés manuellement.
-* **Architecture du Code :** La structure des listes chaînées et la gestion des piles sont de ma propre conception.
+* **Algorithmic Logic :** The final sorting strategy and the implementation of cost functions were designed and coded manually.
+* **Architecture du Code :** The design of the linked lists and the global management of the stacks are my own work.
 
-> **Note :** L'IA a été utilisée pour accélérer la compréhension de certains concepts mathématiques et pour gagner du temps sur le formatage, tout en garantissant que chaque ligne de code poussée a été comprise et réécrite par mes soins.
+> **Note :** AI was used as a supportive tool to accelerate learning. Every line of code was written, tested, and fully understood by me to ensure total mastery of the project during evaluation.

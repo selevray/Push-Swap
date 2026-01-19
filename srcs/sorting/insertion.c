@@ -6,7 +6,7 @@
 /*   By: selevray <selevray@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:45:33 by bzeloxx           #+#    #+#             */
-/*   Updated: 2026/01/19 15:33:37 by selevray         ###   ########.fr       */
+/*   Updated: 2026/01/19 17:38:02 by selevray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	insertion_sort(t_data *data, int median)
 		pb(data);
 		if (data->pile_b->value < median)
 			rb(data);
-	}	
+	}
 	if (data->size_a == 3)
 		sort_three(data);
 	else if (data->size_a == 2)

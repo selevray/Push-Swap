@@ -41,8 +41,8 @@ make fclean   # Supprime toutW
 
 ### Exec
 ```bash 
-ARG="4 67 3 1 23"; ./push_swap $ARG
-ARG="4 1 2"; ./push_swap $ARG | ./checker $ARG
+ARG="4 67 3 1 23"; ./push_swap $ARG #Exec Push Swap
+ARG="4 1 2"; ./push_swap $ARG | ./checker $ARG #Exec Push Swap + checker
 # Résultat attendu : OK
 ```
 
@@ -55,10 +55,10 @@ ARG="4 1 2"; ./push_swap $ARG | ./checker $ARG
 * **[Push_swap Visualizer](https://github.com/o-reo/push_swap_visualizer)** : Indispensable pour voir ton algorithme "réfléchir" en temps réel.
 * **[Push_swap Tester](https://github.com/SimonCROS/push_swap_tester)** : Pour tester les performances.
 
-### 🛠️ AI as fait 
+### 🤖 AI as fait 
 * **Aide au Debugging :** Analyse de segments de code spécifiques pour identifier des fuites de mémoire (leaks) ou des erreurs de segmentation.
-* **Exercice de Comprehension:** Exercice pour comprendre le projet (comme faire plusieur algo de tri).
-* **Explication de Concepts :** Clarification des algorithmes complexes (comme le tri par coût).
+* **Exercice de Comprehension:** : Étude de plusieurs algorithmes de tri pour comparer leur efficacité avant implémentation..
+* **Explication de Concepts :** Clarification des calculs de coûts pour les optimisations de mouvements..
 * **Optimisation du README :** Aide à la mise en page et à la structuration de cette documentation.
 
 ### 🚫 Ce que l'IA n'a PAS fait :

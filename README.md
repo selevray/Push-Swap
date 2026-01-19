@@ -42,8 +42,8 @@ make fclean   # Removes all compiled files
 ### Execution
 ```bash 
 # Run Push_swap
-ARG="4 67 3 1 23"; ./push_swap $ARG
-
+./push_swap 4 75 12 2 0
+./push_swap "4 75 12 2 0"
 # Run Push_swap with the checker (Bonus)
 ARG="4 1 2"; ./push_swap $ARG | ./checker $ARG
 # Expected result: OK

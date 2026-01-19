@@ -11,17 +11,18 @@ L'algorithme de tri utilisé est un **Insertion Sort optimisé** par un calcul d
 
 ### 📊 Performances
 
+### 📊 Performances
+
 Mon algorithme a été optimisé pour minimiser le nombre d'instructions, dépassant largement les exigences du barème de 42 :
 
 | Nombre d'éléments | Performance (Moyenne) | Objectif 42 (Max) |
-| :--- | :---: | :---: | :---: |
+| :--- | :---: | :---: |
 | **3 nombres** | `2 coups` | 3 coups |
 | **5 nombres** | `8 coups` | 12 coups |
 | **100 nombres** | `577 coups` | 700 coups |
 | **500 nombres** | `4588 coups` | 5500 coups |
 
-> _Les tests ont été effectués avec des listes générées aléatoirement._
-
+> _Les tests ont été effectués avec des listes générées aléatoirement sur 100 iterations._
 ## Instructions
 
 ### Compilation

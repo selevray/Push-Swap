@@ -5,7 +5,7 @@
 ## Description
 Le projet **Push_swap** est un exercice d'algorithmie consistant à trier une pile de nombres avec un set d'instructions limité. L'enjeu est de trouver la séquence d'instructions la plus courte.
 
-Ma solution repose sur une **liste doublement chaînée circulaire**, une structure de données où chaque nœud pointe vers le suivant et le précédent, et où le dernier élément est relié au premier. Cette architecture est idéale pour simuler le comportement circulaire des piles (les rotations `ra`, `rb`, `rra`, `rrb`).
+Ma solution repose sur une **liste chaînée circulaire**, une structure de données où chaque nœud pointe vers le suivant et le précédent, et où le dernier élément est relié au premier. Cette architecture est idéale pour simuler le comportement circulaire des piles (les rotations `ra`, `rb`, `rra`, `rrb`).
 
 
 

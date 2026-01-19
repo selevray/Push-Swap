@@ -14,12 +14,13 @@ NAME		= push_swap
 
 CC			= cc
 CFLAGS		= -Wall -Wextra -Werror -g3
-INCLUDES	= -I./includes
+INCLUDES	= -I./includes -I./bonus/includes
 
 # Directories
 SRCDIR		= srcs
 OBJDIR		= objs
 INCDIR		= includes
+BNSDIR 		= bonus
 
 # Source files
 SRCS		= main.c \
@@ -38,67 +39,82 @@ SRCS		= main.c \
 			  $(SRCDIR)/operations/operation_mix.c \
           	  $(SRCDIR)/utils/operation_utils.c \
 
+
 # Bonus source files
-BONUS_SRCS = $(SRCDIR)/bonus/checker.c \
-             $(SRCDIR)/bonus/read_ops.c \
-			 $(SRCDIR)/bonus/get-next-line/get_next_line.c \
-			 $(SRCDIR)/bonus/get-next-line/get_next_line_utils.c \
-             $(COMMON_SRCS)
+BONUS_SRCS = $(BNSDIR)/main.c \
+			 $(BNSDIR)/srcs/read_ops_bonus.c \
+			 $(BNSDIR)/srcs/get_next_line_bonus.c \
+			 $(BNSDIR)/srcs/get_next_line_utils_bonus.c
 
 # Object files
-OBJS		= $(OBJDIR)/main.o \
-			  $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(filter $(SRCDIR)/%,$(SRCS)))
+OBJS = $(OBJDIR)/main.o \
+	$(OBJDIR)/push_swap.o \
+	$(OBJDIR)/sorting/sort_small.o \
+	$(OBJDIR)/sorting/insertion_utils.o \
+	$(OBJDIR)/sorting/insertion_exec.o \
+	$(OBJDIR)/sorting/insertion.o \
+	$(OBJDIR)/sorting/sort_and_index.o \
+	$(OBJDIR)/utils/piles_utils.o \
+	$(OBJDIR)/utils/utils.o \
+	$(OBJDIR)/utils/exeption_utils.o \
+	$(OBJDIR)/utils/ft_split.o \
+	$(OBJDIR)/operations/operations_a.o \
+	$(OBJDIR)/operations/operations_b.o \
+	$(OBJDIR)/operations/operation_mix.o \
+	$(OBJDIR)/utils/operation_utils.o
+
 
 # Bonus object files
-BONUS_OBJS = $(patsubst $(SRCDIR)/bonus/%.c,$(OBJDIR)/bonus/%.o,$(filter $(SRCDIR)/bonus/%,$(BONUS_SRCS)))
-BONUS_OBJS += $(patsubst $(SRCDIR)/bonus/get-next-line/%.c,$(OBJDIR)/bonus/get-next-line/%.o,$(filter $(SRCDIR)/bonus/get-next-line/%,$(BONUS_SRCS)))
+BONUS_OBJS = $(OBJDIR)/bonus/main.o \
+			 $(OBJDIR)/bonus/read_ops_bonus.o \
+			 $(OBJDIR)/bonus/get_next_line_bonus.o \
+			 $(OBJDIR)/bonus/get_next_line_utils_bonus.o
 
 # Header files
 HEADERS		= $(INCDIR)/push_swap.h \
-			  $(INCDIR)/operations.h \
-			  $(INCDIR)/algorithms.h \
-			  $(INCDIR)/bonus/checker.h
+			  $(BNSDIR)/includes/checker_bonus.h
 
 # Rules
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
-	@echo "✓ $(NAME) compilé avec succès"
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	@echo "$(NAME) compilé avec succès"
 
 $(OBJDIR)/main.o: main.c $(HEADERS)
-	@mkdir -p $(OBJDIR)
-	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADERS)
-	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
-$(OBJDIR)/bonus/%.o: $(SRCDIR)/bonus/%.c $(HEADERS)
-	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
-$(OBJDIR)/bonus/get-next-line/%.o: $(SRCDIR)/bonus/get-next-line/%.c $(HEADERS)
-	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+$(OBJDIR)/bonus/%.o: $(BNSDIR)/%.c $(HEADERS)
+	mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+$(OBJDIR)/bonus/%.o: $(BNSDIR)/srcs/%.c $(HEADERS)
+	mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 bonus: $(BONUS_OBJS) $(filter-out $(OBJDIR)/main.o,$(OBJS))
-	@$(CC) $(CFLAGS) $^ -o checker
-	@echo "✓ Bonus compilé avec succès"
+	$(CC) $(CFLAGS) $^ -o checker
+	@echo "Bonus compilé avec succès"
 
 clean:
-	@rm -rf $(OBJDIR)
-	@echo "✓ Fichiers objets supprimés"
+	rm -rf $(OBJDIR)
+	@echo "Fichiers objets supprimés"
 
 fclean_bonus:
-	@rm -f checker
-	@rm -rf $(OBJDIR)/bonus
-	@echo "✓ Fichiers bonus et checker supprimés"
+	rm -f checker
+	rm -rf $(OBJDIR)/bonus
+	@echo "Fichiers bonus et checker supprimés"
 
 fclean: clean
-	@rm -f $(NAME)
-	@echo "✓ Exécutable supprimé"
+	rm -f $(NAME)
+	@echo "Exécutable supprimé"
 
 re: fclean all
 

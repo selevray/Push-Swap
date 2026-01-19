@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/bonus/checker.h"
+#include "checker_bonus.h"
 
 int	ft_strcmp(char *s1, char *s2)
 {

@@ -96,18 +96,19 @@ void	index_stack(t_node *pile, int size, int *median)
 	*median = tab[size / 2];
 	free(tab);
 }
-void	print_stack(t_data *data)
-{
-	int		i;
-	t_node	*current;
 
-#include <stdio.h>
-	i = 0;
-	current = data->pile_a;
-	while (i < data->size_a)
-	{
-		printf("%d ", current->value);
-		i++;
-		current = current->next;
-	}
-}
+// void	print_stack(t_data *data)
+// {
+// 	int		i;
+// 	t_node	*current;
+
+// #include <stdio.h>
+// 	i = 0;
+// 	current = data->pile_a;
+// 	while (i < data->size_a)
+// 	{
+// 		printf("%d ", current->value);
+// 		i++;
+// 		current = current->next;
+// 	}
+// }

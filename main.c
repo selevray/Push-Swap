@@ -44,7 +44,7 @@ int	main(int argc, char *argv[])
 	if (parse_arguments(argc, argv, &data) == 0)
 	{
 		write(2, "Error\n", 6);
-		return (1);
+		return (free_stack(data.pile_a, data.size_a), free_stack(data.pile_b, data.size_b),1);
 	}
 	execute_sort(&data);
 	free_stack(data.pile_a, data.size_a);

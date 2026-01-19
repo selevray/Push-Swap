@@ -41,7 +41,7 @@ SRCS		= main.c \
 
 
 # Bonus source files
-BONUS_SRCS = $(BNSDIR)/main.c \
+BONUS_SRCS = $(BNSDIR)/main_bonus.c \
 			 $(BNSDIR)/srcs/read_ops_bonus.c \
 			 $(BNSDIR)/srcs/get_next_line_bonus.c \
 			 $(BNSDIR)/srcs/get_next_line_utils_bonus.c
@@ -107,13 +107,10 @@ clean:
 	rm -rf $(OBJDIR)
 	@echo "Fichiers objets supprimés"
 
-fclean_bonus:
-	rm -f checker
-	rm -rf $(OBJDIR)/bonus
-	@echo "Fichiers bonus et checker supprimés"
-
 fclean: clean
 	rm -f $(NAME)
+	rm -f checker
+	rm -rf $(OBJDIR)/bonus
 	@echo "Exécutable supprimé"
 
 re: fclean all

@@ -14,7 +14,7 @@ L'algorithme de tri utilisé est un **Insertion Sort optimisé** par un calcul d
 Mon algorithme a été optimisé pour minimiser le nombre d'instructions, dépassant largement les exigences du barème de 42 :
 
 | Nombre d'éléments | Performance (Moyenne) | Objectif 42 (Max) |
-| :--- | :---: | :---: | ---: |
+| :--- | :---: | :---: | :---: |
 | **3 nombres** | `2 coups` | 3 coups |
 | **5 nombres** | `8 coups` | 12 coups |
 | **100 nombres** | `577 coups` | 700 coups |
